@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@model Select2_MultiSelect.Models.Dealership
+
+@{
+    ViewBag.Title = "Auto Home Page";
+}
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#ddlCars").select2({
+                placeholder: "Select a Cars.."
+            });
+        });
+    </script>
+}
+
+<div class="jumbotron">
+    <h1>Select2 Multi-Select Example</h1>
+</div>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Automobiles)
+                </div>
+                <div class="editor-field">
+                
+                        @Html.ListBoxFor(model => model.SelectedAutomobiles, new SelectList(Model.Automobiles, "Id", "Make"),  new { multiple = "multiple", @id = "ddlCars" , @name ="Automobile" })
+                    
+                   
+
+                </div>
+            </div>
+        </div>
+     
+        <div class="col-sm-1">
+            <input type="submit" value="Submit" class="btn btn-primary btn-lg submit-btn" />
+        </div>
+
+    </div>
+}
+
+
