@@ -29,4 +29,7 @@ Other references here using ASP.NET
 https://www.intertech.com/Blog/selecting-multiple-items-using-select2-in-mvc-5/
 
 
+https://www.mikesdotnetting.com/article/265/asp-net-mvc-dropdownlists-multiple-selection-and-enum-support
+
+
 
